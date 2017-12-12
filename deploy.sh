@@ -24,7 +24,8 @@ then
 	unzip update.zip
 
 	# deploy projects of service 
-	if test -e *.jar
+	JAR_FILES_NUM=$(ls *.jar 2>/dev/null | wc -l)
+	if [ $JAR_FILES_NUM != "0" ]
 	then 
 	  chmod 500 *.jar
 	  cd services/
